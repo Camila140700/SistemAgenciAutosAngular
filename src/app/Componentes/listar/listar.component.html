@@ -1,0 +1,40 @@
+<div class="container" style="z-index: 10; position: relative;">
+    <h6 style="font-size: 2em; color: #40006e; text-align: center; text-shadow: 2px 2px #ddd;">
+        Lista de Marcas
+    </h6>
+    <div style=" padding-left: 85%;">
+        <a class="btn btn-outline-primary" >
+            <span class="material-icons"  (click)="abrirCompGuardar()">add</span>
+          </a>
+    </div>
+    <table class="table" style="width: 100%;">
+        <thead>
+          <tr style="background: black; color: white;">
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Eslogan</th>
+            <th scope="col">Acciones</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let j of listarMarcas">
+            <th scope="row">{{j.id}}</th>
+            <td>{{j.nombre}}</td>
+            <td>{{j.origen}}</td>
+            <td>{{j.eslogan}}</td>
+            <td>
+              <a class="btn btn-outline-warning">
+                <span class="material-icons" style="z-index: 2;" (click)="abrirCompEditarEnviarid(j)">edit</span>
+              </a>
+              <a class="btn btn-outline-danger">
+                <span class="material-icons" style="z-index: 2;" (click)="abrirCompEliminarEnviarid(j)" >delete</span>
+              </a>
+            </td>
+      
+          </tr>
+        </tbody>
+      </table>
+
+</div>
